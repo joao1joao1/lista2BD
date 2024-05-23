@@ -287,6 +287,20 @@ select avg(ano_publicacao)
 from Livros
 where disponivel = True;
 
+select max(ano_publicacao) as 'mais recente', max(titulo) as 'titulo recente', min(ano_publicacao) as 'publicação antigo', min(titulo) as 'titulo publicação';
+
 select titulo, ano_publicacao
 from Livros
-where max
+order by ano_publicacao desc;
+
+select titulo, idioma from Livros
+where idioma = 'Inglês'
+
+UNION
+
+select titulo, idioma from Livros
+where idioma = 'Português';
+
+select titulo, autor
+from Livros
+where autor = 'George Orwell';
